@@ -16,7 +16,7 @@
     }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   #topbar {
     background: #fff;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
@@ -42,7 +42,7 @@
     height: 32px;
     border: red;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     background: #ddd;
     color: #222;
       &:hover{

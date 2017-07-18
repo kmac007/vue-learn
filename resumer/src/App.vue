@@ -15,6 +15,8 @@
 import Topbar from './components/Topbar'
 import ResumePreview from './components/ResumePreview'
 import ResumeEditor from './components/ResumeEditor'
+
+
 export default {
   name: 'app',
   components: { Topbar, ResumeEditor, ResumePreview }
@@ -33,7 +35,7 @@ export default {
     margin: 0;
     display: flex;
     justify-content: space-around;
-    width: 100%; 
+    width: 100%;
     align-self: center; //自身在容器中居中
     margin-top: 16px;
     margin-bottom: 16px;
