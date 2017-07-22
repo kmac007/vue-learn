@@ -1,11 +1,18 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
+import objectPath from 'object-path'
+import AV from '../lib/leancloud'
+import getAVUser from '../lib/getAVUser'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     selected: 'profile',
+    user: {
+      id: '',
+      username: ''
+    },
     resume: {
       config: [{
           field: 'profile',
@@ -42,8 +49,8 @@ export default new Vuex.Store({
           content: '我的第一份工作是'
         },
         {
-          company: 'AL',
-          content: '我的第一份工作是'
+          company: 'cf',
+          content: '我的第er份工作是'
         }
       ],
       education: [{
@@ -85,8 +92,24 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    switchTab(state,payload){
+    initState(state, payload) {
+      Object.assign(state, payload)
+    },
+    switchTab(state, payload) {
       state.selected = payload
+    },
+    updateResume(state, {
+      path,
+      value
+    }) {
+      objectPath.set(state.resume, path, value)
+      localStorage.setItem('state', JSON.stringify(state))
+    },
+    setUser(state, payload) {
+      Object.assign(state.user, payload)
+    },
+    removeUser(state) {
+      state.user.id = null
     }
   }
 })
