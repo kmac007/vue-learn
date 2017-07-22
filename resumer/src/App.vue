@@ -15,10 +15,11 @@
 import Topbar from './components/Topbar'
 import ResumePreview from './components/ResumePreview'
 import ResumeEditor from './components/ResumeEditor'
-
+import store from './store/index'
 
 export default {
   name: 'app',
+  store,
   components: { Topbar, ResumeEditor, ResumePreview }
 }
 </script>
